@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components';
 import { DatePicker, DatePickerProps } from 'antd';
 
 import CalendarCheckLineIcon from '../../assets/icons/calendar-check-line.svg';

@@ -115,16 +115,15 @@ const statusOptions = Object.keys(STATUS).map((value: string) => ({
 const TaskModal = () => {
 	const { isVisible, setIsVisible, selectedTask, setSelectedTask } =
 		useContext(TaskModalContext);
-	const { register, handleSubmit, formState, setValue, reset } =
-		useForm<ITaskForm>({
-			defaultValues: taskFormInitialState,
-		});
+	const { register, handleSubmit, setValue, reset } = useForm<ITaskForm>({
+		defaultValues: taskFormInitialState,
+	});
 	const { loading, data: usersData } = useQuery<UsersDataType>(GET_USERS);
-	const [createTask, { error: createError, data: createData }] = useMutation<
+	const [createTask, { error: createError }] = useMutation<
 		{ createTask: ITask },
 		{ input: ITaskForm }
 	>(CREATE_TASK);
-	const [updateTask, { error: updateError, data: updateData }] = useMutation<
+	const [updateTask, { error: updateError }] = useMutation<
 		{ updateTask: ITask },
 		{ input: ITaskForm & { id: string } }
 	>(UPDATE_TASK);
@@ -158,11 +157,19 @@ const TaskModal = () => {
 					},
 				},
 			});
-			message.success({
-				content: 'Task Updated...',
-				key: data.name,
-				duration: 2,
-			});
+			if (updateError) {
+				message.success({
+					content: 'Task Updated...',
+					key: data.name,
+					duration: 2,
+				});
+			} else {
+				message.error({
+					content: 'There was an error updating the task...',
+					key: data.name,
+					duration: 2,
+				});
+			}
 		} else {
 			createTask({
 				variables: { input: data },
@@ -176,11 +183,19 @@ const TaskModal = () => {
 					});
 				},
 			});
-			message.success({
-				content: 'Task Created...',
-				key: data.name,
-				duration: 2,
-			});
+			if (createError) {
+				message.error({
+					content: 'Task Created...',
+					key: data.name,
+					duration: 2,
+				});
+			} else {
+				message.error({
+					content: 'There was an error creating the task...',
+					key: data.name,
+					duration: 2,
+				});
+			}
 		}
 		setIsVisible(false);
 	};

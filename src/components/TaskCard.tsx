@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import ReactAvatar from 'react-avatar';
 import { useMutation } from '@apollo/client';
 import moment from 'moment';
+import { message } from 'antd';
 
 import { TaskTag } from '.';
 import {
@@ -113,7 +114,7 @@ const options = [
 const TaskCard = ({ task }: TaskCardProps) => {
 	const [openCardMenu, setOpenCardMenu] = useState(false);
 	const { setIsVisible, setSelectedTask } = useContext(TaskModalContext);
-	const [deleteTask, { error: deleteError, data: deleteData }] = useMutation<
+	const [deleteTask, { error: deleteError }] = useMutation<
 		{ deleteTask: { id: string } },
 		{ input: { id: string } }
 	>(DELETE_TASK, {
@@ -151,6 +152,19 @@ const TaskCard = ({ task }: TaskCardProps) => {
 			setIsVisible(true);
 		} else {
 			deleteTask({ variables: { input: { id: task.id } } });
+			if (deleteError) {
+				message.success({
+					content: 'Task deleted...',
+					key: task.id,
+					duration: 2,
+				});
+			} else {
+				message.error({
+					content: 'There was an error deleting the task...',
+					key: task.id,
+					duration: 2,
+				});
+			}
 		}
 		setOpenCardMenu(false);
 	};

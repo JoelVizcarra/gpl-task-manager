@@ -97,7 +97,7 @@ const Select = ({
 	useEffect(() => {
 		onChange(selected);
 		if (!multiselect) setOpenMenu(false);
-	}, [selected]);
+	}, [selected, multiselect, setOpenMenu, onChange]);
 
 	const renderSelected = useCallback(() => {
 		if (selected === null || selected?.length === 0) return defaultOption;
