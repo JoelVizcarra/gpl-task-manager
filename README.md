@@ -24,23 +24,23 @@ task management app that allows browsing and add tasks to users, the app is usin
 
 #### Dashboard
 
-![Dashboard](https://ibb.co/d0vKwFh)
+![Dashboard](https://i.ibb.co/27rK1xb/Dashboard.png)
 
 #### Create Task
 
-![Create task modal](https://ibb.co/Gt8rBf5)
-![Create task modal](https://ibb.co/R731bDT)
-![Create task message](https://ibb.co/ZMRPvkK)
+![Create task modal](https://i.ibb.co/7RZ08x1/create-task-modal.png)
+![Create task modal](https://i.ibb.co/25vwhk3/create-task-modal-form.png)
+![Create task message](https://i.ibb.co/9rmLBC2/create-task-message.png)
 
 #### Edit Task
 
-![Edit task modal](https://ibb.co/zJw4zb6)
-![Edit task modal](https://ibb.co/3BV6fSZ)
-![Edit task message](https://ibb.co/PZPHTpL)
+![Edit task modal](https://i.ibb.co/GTj5qkH/edit-task-modal.png)
+![Edit task modal](https://i.ibb.co/vZfysLn/edit-task-modal-forms.png)
+![Edit task message](https://i.ibb.co/xSBTmvk/task-updated-message.png)
 
 #### User Profile
 
-![User Profile](https://ibb.co/bF5WYYz)
+![User Profile](https://i.ibb.co/9hH8BBs/user-profile.png)
 
 ### Project Libraries
 
