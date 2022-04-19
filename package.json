@@ -22,7 +22,6 @@
 		"react-hook-form": "^7.29.0",
 		"react-router-dom": "6",
 		"react-scripts": "5.0.0",
-		"remixicon-react": "^1.0.0",
 		"styled-components": "^5.3.5",
 		"typescript": "^4.4.2",
 		"web-vitals": "^2.1.0"

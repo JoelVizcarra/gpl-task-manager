@@ -1,10 +1,12 @@
-# Getting Started with Create React App
+# GPL Task Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Running the project
 
-## Available Scripts
+Clone the project and inside the project directory run:
 
-In the project directory, you can run:
+### `yarn`
+
+Start the development server with:
 
 ### `yarn start`
 
@@ -14,34 +16,53 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+## Project Description
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+task management app that allows browsing and add tasks to users, the app is using the provided GraphQL API.
 
-### `yarn build`
+### Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Dashboard
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Dashboard](https://ibb.co/d0vKwFh)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Create Task
 
-### `yarn eject`
+![Create task modal](https://ibb.co/Gt8rBf5)
+![Create task modal](https://ibb.co/R731bDT)
+![Create task message](https://ibb.co/ZMRPvkK)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Edit Task
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Edit task modal](https://ibb.co/zJw4zb6)
+![Edit task modal](https://ibb.co/3BV6fSZ)
+![Edit task message](https://ibb.co/PZPHTpL)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### User Profile
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![User Profile](https://ibb.co/bF5WYYz)
 
-## Learn More
+### Project Libraries
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##### Typescript
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# gpl-task-manager
+##### React
+
+##### React router
+
+##### React avatar
+
+##### Ant Design (craco for custom theming)
+
+##### Moment JS
+
+##### React hook form
+
+##### GraphQL
+
+##### Apollo client
+
+##### Styled components
+
+<br/>
+I used a simple project structure separating them by functionality, I decided to use the API Context for certain shared data like the Modal status and the UI theme, for the backend data retrieval I used Apollo client, cache update and optimistic response, overall the biggest challenge was the time, as there is still room for a lot of improvements.
