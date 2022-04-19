@@ -42,27 +42,16 @@ task management app that allows browsing and add tasks to users, the app is usin
 
 ![User Profile](https://i.ibb.co/9hH8BBs/user-profile.png)
 
-### Project Libraries
-
-##### Typescript
-
-##### React
-
-##### React router
-
-##### React avatar
-
-##### Ant Design (craco for custom theming)
-
-##### Moment JS
-
-##### React hook form
-
-##### GraphQL
-
-##### Apollo client
-
-##### Styled components
+- Typescript
+- React
+- React router
+- React avatar
+- Ant Design (craco for custom theming)
+- Moment JS
+- React hook form
+- GraphQL
+- Apollo client
+- Styled components
 
 <br/>
 I used a simple project structure separating them by functionality, I decided to use the API Context for certain shared data like the Modal status and the UI theme, for the backend data retrieval I used Apollo client, cache update and optimistic response, overall the biggest challenge was the time, as there is still room for a lot of improvements.
