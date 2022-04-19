@@ -42,6 +42,8 @@ task management app that allows browsing and add tasks to users, the app is usin
 
 ![User Profile](https://i.ibb.co/9hH8BBs/user-profile.png)
 
+### Project Libraries
+
 - Typescript
 - React
 - React router
