@@ -2,7 +2,8 @@
 
 ## Running the project
 
-Clone the project and inside the project directory run:
+Clone the project, inside the project directory copy the ".env.example" file and remane the copy to ".env"
+Then inside the project directory run:
 
 ### `yarn`
 
