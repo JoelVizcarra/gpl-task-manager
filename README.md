@@ -1,5 +1,7 @@
 # GPL Task Manager
 
+Simple React project as client for simple task manager backend using GraphQL
+
 ## Running the project
 
 Clone the project, inside the project directory copy the ".env.example" file and remane the copy to ".env"
