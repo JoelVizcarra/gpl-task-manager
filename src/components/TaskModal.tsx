@@ -1,16 +1,16 @@
-import React, { useContext, useCallback, useEffect, useMemo } from 'react';
-import styled from 'styled-components';
-import moment from 'moment';
-import ReactAvatar from 'react-avatar';
-import { useQuery, useMutation } from '@apollo/client';
-import { useForm } from 'react-hook-form';
-import { message } from 'antd';
+import React, { useContext, useCallback, useEffect, useMemo } from "react";
+import styled from "styled-components";
+import moment from "moment";
+import ReactAvatar from "react-avatar";
+import { useQuery, useMutation } from "@apollo/client";
+import { useForm } from "react-hook-form";
+import { message } from "antd";
 
-import { TaskModalContext } from '../context/TaskModalContext';
-import { ReactComponent as IncreaseDeacreaseFillIcon } from './../assets/icons/increase-decrease-fill.svg';
-import { ReactComponent as UserFillIcon } from './../assets/icons/user-fill.svg';
-import { ReactComponent as PriceTagFillIcon } from './../assets/icons/price-tag-fill.svg';
-import { ReactComponent as ListCheckIcon } from './../assets/icons/list-check.svg';
+import { TaskModalContext } from "../context/TaskModalContext";
+import { ReactComponent as IncreaseDeacreaseFillIcon } from "./../assets/icons/increase-decrease-fill.svg";
+import { ReactComponent as UserFillIcon } from "./../assets/icons/user-fill.svg";
+import { ReactComponent as PriceTagFillIcon } from "./../assets/icons/price-tag-fill.svg";
+import { ReactComponent as ListCheckIcon } from "./../assets/icons/list-check.svg";
 import {
   Flex,
   Text,
@@ -25,7 +25,7 @@ import {
   ModalOverlay,
   Avatar,
   CustomDatePicker,
-} from './styled';
+} from "./styled";
 import {
   POINT_ESTIMATE,
   POINT_ESTIMATE_MAP,
@@ -33,10 +33,10 @@ import {
   TASK_TAGS_MAP,
   STATUS,
   STATUS_MAP,
-} from '../constants';
-import { GET_USERS, UsersDataType } from '../queries/User';
-import { CREATE_TASK, GET_TASKS, UPDATE_TASK } from '../queries/Task';
-import { ITask, ITaskForm } from '../types';
+} from "../constants";
+import { GET_USERS, UsersDataType } from "../queries/User";
+import { CREATE_TASK, GET_TASKS, UPDATE_TASK } from "../queries/Task";
+import { ITask, ITaskForm } from "../types";
 
 const StyledModalContainer = styled(ModalContainer)`
   color: ${({ theme }) => theme.palette.neutral.first};
@@ -84,9 +84,9 @@ const SelectsContainer = styled(Flex)`
 `;
 
 const taskFormInitialState: ITaskForm = {
-  assigneeId: '',
-  dueDate: '',
-  name: '',
+  assigneeId: "",
+  dueDate: "",
+  name: "",
   pointEstimate: null,
   status: null,
   tags: [],
@@ -141,7 +141,7 @@ const TaskModal = () => {
   }, [selectedTask, selectedTask?.id, reset]);
 
   const onSubmit = (data: ITaskForm) => {
-    message.loading({ content: 'Loading...', key: data.name });
+    message.loading({ content: "Loading...", key: data.name });
     if (selectedTask) {
       updateTask({
         variables: { input: { ...data, id: selectedTask.id } },
@@ -159,13 +159,13 @@ const TaskModal = () => {
       });
       if (updateError) {
         message.error({
-          content: 'There was an error updating the task...',
+          content: "There was an error updating the task...",
           key: data.name,
           duration: 2,
         });
       } else {
         message.success({
-          content: 'Task Updated...',
+          content: "Task Updated...",
           key: data.name,
           duration: 2,
         });
@@ -185,13 +185,13 @@ const TaskModal = () => {
       });
       if (createError) {
         message.error({
-          content: 'There was an error creating the task...',
+          content: "There was an error creating the task...",
           key: data.name,
           duration: 2,
         });
       } else {
         message.success({
-          content: 'Task Created...',
+          content: "Task Created...",
           key: data.name,
           duration: 2,
         });
@@ -246,7 +246,7 @@ const TaskModal = () => {
             <StyledInput
               placeholder="Task Title"
               type="text"
-              {...register('name')}
+              {...register("name")}
             />
           </ModalHeader>
           <ModalBody>
@@ -262,7 +262,7 @@ const TaskModal = () => {
                 options={estimateOptions}
                 value={selectedTask && selectedTask.pointEstimate}
                 onChange={(value) =>
-                  setValue('pointEstimate', value as POINT_ESTIMATE)
+                  setValue("pointEstimate", value as POINT_ESTIMATE)
                 }
               />
               <Select
@@ -275,7 +275,7 @@ const TaskModal = () => {
                 menuHeader="Assign To.."
                 options={assigneeOptions}
                 value={selectedTask && selectedTask.assignee.id}
-                onChange={(value) => handleOnChange('assigneeId', value)}
+                onChange={(value) => handleOnChange("assigneeId", value)}
               />
               <Select
                 defaultOption={
@@ -287,14 +287,14 @@ const TaskModal = () => {
                 menuHeader="Tag Title"
                 options={tagOptions}
                 value={selectedTask && selectedTask.tags}
-                onChange={(value) => handleOnChange('tags', value)}
+                onChange={(value) => handleOnChange("tags", value)}
                 multiselect
               />
               <CustomDatePicker
                 defaultValue={
                   (selectedTask && moment(selectedTask.dueDate)) || undefined
                 }
-                onChange={(value) => handleOnChange('dueDate', value)}
+                onChange={(value) => handleOnChange("dueDate", value)}
               />
               <Select
                 defaultOption={
@@ -306,7 +306,7 @@ const TaskModal = () => {
                 menuHeader="Status"
                 options={statusOptions}
                 value={selectedTask && selectedTask.status}
-                onChange={(value) => setValue('status', value as STATUS)}
+                onChange={(value) => setValue("status", value as STATUS)}
               />
             </SelectsContainer>
           </ModalBody>
@@ -315,7 +315,7 @@ const TaskModal = () => {
               Cancel
             </Button>
             <Button type="submit" variant="primary">
-              {selectedTask ? 'Edit' : 'Create'}
+              {selectedTask ? "Edit" : "Create"}
             </Button>
           </StyledModalFooter>
         </form>
